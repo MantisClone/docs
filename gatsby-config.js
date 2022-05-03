@@ -112,8 +112,16 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
+        // implementation: require('node-sass'),
         sassOptions: {
           includePaths: [`${__dirname}/node_modules`, `${__dirname}/src/styles`]
+        },
+        cssLoaderOptions: {
+          esModule: false,
+          modules: {
+            namedExport: false,
+            exportLocalsConvention: 'camelCaseOnly'
+          }
         }
       }
     },
@@ -170,7 +178,6 @@ module.exports = {
         path: `${__dirname}/read-the-docs/markdowns`,
         name: 'markdowns'
       }
-    },
-    `gatsby-transformer-remark-plaintext`
+    }
   ]
 }

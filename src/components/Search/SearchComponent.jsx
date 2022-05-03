@@ -28,7 +28,6 @@ const SearchComponent = ({ location }) => {
               module
             }
             id
-            plainText
           }
         }
       }
@@ -56,7 +55,7 @@ const SearchComponent = ({ location }) => {
       title: node.frontmatter.title,
       description: node.frontmatter.description,
       id: node.id,
-      text: node.plainText,
+      text: '',
       slug,
       section
     }
