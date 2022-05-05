@@ -4,6 +4,7 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const Swagger = require('swagger-client')
 const { redirects, swaggerComponents } = require('./config')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -391,6 +392,11 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       fallback: {
         fs: false
       }
-    }
+    },
+    plugins: [
+      new MiniCssExtractPlugin({
+        ignoreOrder: true
+      })
+    ]
   })
 }
