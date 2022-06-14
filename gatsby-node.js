@@ -388,10 +388,10 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     resolve: {
       alias: {
         path: require.resolve('path-browserify')
-      },
-      fallback: {
-        fs: false
       }
+      // fallback: {
+      //   fs: false
+      // }
     },
     plugins: [
       new MiniCssExtractPlugin({
